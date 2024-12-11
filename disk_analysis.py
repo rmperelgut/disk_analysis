@@ -26,7 +26,7 @@ class Universe:
 
         # dictionary that contains all the galaxies, so we have a dictionary of dictionaries
         self.grand_dict[name] = data_dict[data_key]
-        ut.io.file_hdf5(file_name_base='/Users/rpere/Desktop/Wetzel/{}'.format(filename),
+        ut.io.file_hdf5(file_name_base='/folder/{}'.format(filename),
                         dict_or_array_to_write=self.grand_dict)
 
     def get_from_grand_dict(self, name, filename):
@@ -409,7 +409,6 @@ class Galaxy:
         # Now let's find the MOI, we have all the masks we need
         # this gives us z0
 
-        # sus ignore
         moi_slide = ut.particle.get_principal_axes(part, distance_max=D, mass_percent=90,
                                                    age_limits=[youngest_lower, youngest_upper])['rotation'][-1]
 
